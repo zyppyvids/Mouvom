@@ -115,32 +115,18 @@ eleventhKey.position.set(5.85, 1.5, 0.75);
 eleventhKey.rotation.y = Math.PI / 2;
 
 // First leg
-var thirteenthGeometry = new THREE.BoxGeometry(0.1, 1.05, 0.1);
+var thirteenthGeometry = new THREE.BoxGeometry(0.3, 2, 2);
 
 var firstLeg = new THREE.Mesh(thirteenthGeometry, outerMaterial);
 
-firstLeg.position.set(6.3, 0.525, 0.8);
+firstLeg.position.set(6.45, 1, 0);
 
 // Second leg
-var fourteenthGeometry = new THREE.BoxGeometry(0.1, 1.05, 0.1);
+var fourteenthGeometry = new THREE.BoxGeometry(0.9, 1.05, 1.6);
 
 var secondLeg = new THREE.Mesh(fourteenthGeometry, outerMaterial);
 
-secondLeg.position.set(6.3, 0.525, -0.8);
-
-// Third leg
-var fifteenthGeometry = new THREE.BoxGeometry(0.1, 1.05, 0.1);
-
-var thirdLeg = new THREE.Mesh(fifteenthGeometry, outerMaterial);
-
-thirdLeg.position.set(5.7, 0.525, -0.8);
-
-// Fourth leg
-var sixteenthGeometry = new THREE.BoxGeometry(0.1, 1.05, 0.1);
-
-var fourthLeg = new THREE.Mesh(sixteenthGeometry, outerMaterial);
-
-fourthLeg.position.set(5.7, 0.525, 0.8);
+secondLeg.position.set(6, 0.525, 0);
 
 
 pianoObjects.add(outerBoxWithHole);
@@ -161,7 +147,5 @@ pianoObjects.add(eleventhKey);
 // Leg additure
 pianoObjects.add(firstLeg);
 pianoObjects.add(secondLeg);
-pianoObjects.add(thirdLeg);
-pianoObjects.add(fourthLeg);
 
 scene.add(pianoObjects);

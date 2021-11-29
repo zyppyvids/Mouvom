@@ -6,9 +6,11 @@ var legBody = new THREE.Group();
 
 var upperMaterial = new THREE.MeshPhongMaterial({ shininess: 500, color: "white" });
 var blackMaterial = new THREE.MeshPhongMaterial({ shininess: 500, color: "black" });
+var transparentMaterial = new THREE.MeshPhongMaterial({opacity: 0.6, transparent: true, color: "white"});
 
 var upperCylinderGeometry = new THREE.CylinderGeometry(0.1, 0.1, 0.8, 64);
 var blackCylinderGeometry = new THREE.CylinderGeometry(0.11, 0.11, 0.2, 64);
+var transCylinderGeometry = new THREE.CylinderGeometry(0.09, 0.09, 0.2, 64);
 
 var upperCylBody = new THREE.Mesh(upperCylinderGeometry, upperMaterial);
 var blackCylBody = new THREE.Mesh(blackCylinderGeometry, blackMaterial);
@@ -43,9 +45,16 @@ blackCylBodyWithHole.material = blackMaterial;
 
 blackCylBodyWithHole.position.set(-0.187, 0.32, -0.317);
 
+var transBody = new THREE.Mesh(transCylinderGeometry, transparentMaterial);
+transBody.position.set(-0.187, 0.32, -0.317);
+
+transBody.rotation.x = Math.PI / 2 + Math.PI / 4;
+transBody.rotation.z = - Math.PI / 4 + Math.PI / 8;
+
 // Upper body additure
 upperBody.add(upperCylBodyWithHole);
 upperBody.add(blackCylBodyWithHole);
+upperBody.add(transBody);
 
 var mainLegCylinderGeometry = new THREE.CylinderGeometry(0.05, 0.05, 1, 64);
 var standCylinderGeometry = new THREE.CylinderGeometry(0.3, 0.3, 0.1, 64);
@@ -69,6 +78,3 @@ miniTelescopeObject.add(legBody);
 miniTelescopeObject.position.set(2, 1, -4);
 
 scene.add(miniTelescopeObject);
-
-
-

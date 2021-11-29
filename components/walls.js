@@ -64,6 +64,8 @@ firstCSG.subtract( [secondWall, firstDoorMesh] );
 
 var secondWallWithDoor = firstCSG.toMesh();
 secondWallWithDoor.material = wallMaterial;
+secondWallWithDoor.receiveShadow = true;
+secondWallWithDoor.castShadow = true;
 
 // Third wall
 var thirdGeometry = new THREE.BoxGeometry(wallWidth, wallHeight, 8);
@@ -90,6 +92,8 @@ secondCSG.subtract( [thirdWall, firstWindowMesh] );
 
 var thirdWallWithWindow = secondCSG.toMesh();
 thirdWallWithWindow.material = wallMaterial;
+thirdWallWithWindow.receiveShadow = true;
+thirdWallWithWindow.castShadow = true;
 
 // Fourth wall
 var fourthGeometry = new THREE.BoxGeometry(wallWidth, wallHeight, 8);
@@ -135,6 +139,8 @@ fourthCSG.subtract( [fifthWall, secondDoorMesh, thirdDoorMesh] );
 
 var fifthWallWithDoors = fourthCSG.toMesh();
 fifthWallWithDoors.material = wallMaterial;
+fifthWallWithDoors.receiveShadow = true;
+fifthWallWithDoors.castShadow = true;
 
 // Sixth wall
 var sixthGeometry = new THREE.BoxGeometry(wallWidth, wallHeight, 5);
@@ -225,6 +231,8 @@ fifthCSG.subtract( [eleventhWall, fourthDoorMesh] );
 
 var eleventhWallWithDoor = fifthCSG.toMesh();
 eleventhWallWithDoor.material = wallMaterial;
+eleventhWallWithDoor.receiveShadow = true;
+eleventhWallWithDoor.castShadow = true;
 
 // Twelth wall
 var twelthGeometry = new THREE.BoxGeometry(wallWidth, wallHeight, 5.2);
@@ -266,6 +274,8 @@ sixthCSG.subtract( [thirteenthWall, fifthDoorMesh] );
 
 var thirteenthWallWithDoor = sixthCSG.toMesh();
 thirteenthWallWithDoor.material = wallMaterial;
+thirteenthWallWithDoor.receiveShadow = true;
+thirteenthWallWithDoor.castShadow = true;
 
 
 // Wall objects group additure
